@@ -1,3 +1,3 @@
-class order < ApplicationRecord
+class Order < ApplicationRecord
   
 end
