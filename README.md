@@ -51,9 +51,12 @@ belongs_to :item
 | Column              | Type       | Options                        |
 | -------             | ---------- | ------------------------------ |
 | user                | references | null: false, foreign_key: true |
-| users_prefecture    | references | null: false                    |
+| order               | references | null: false, foreign_key: true |
+| postal_code         | integer    | null: false                    |
+| prefecture          | string     | null: false                    |
 | city                | string     | null: false                    |
-| address_line_1.     | string     | null: false                    |
+| address_line_1      | string     | null: false                    |
+| address_line_2      | string     | null: false                    |
 | phone_number        | integer    | null: false                    |
 
 
