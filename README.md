@@ -53,7 +53,7 @@ has_one :address
 | -------             | ---------- | ------------------------------ |
 | order               | references | null: false, foreign_key: true |
 | postal_code         | string     | null: false                    |
-| prefecture_id       | string     | null: false                    |
+| prefecture_id       | integer    | null: false                    |
 | city                | string     | null: false                    |
 | addresses           | string     | null: false                    |
 | building            | string     |                                |
