@@ -1,7 +1,6 @@
 class Item < ApplicationRecord
   #belongs_to :user
-  #has_one_attached :image
-  #has_many :comments, dependent: :destroy
+  #has_one :order
   
   #validates :image, presence: true
   #validates :title, presence: true 
@@ -13,6 +12,12 @@ class Item < ApplicationRecord
   #validates :delivery_day_id, presence: true
   #validates :price, presence: true
   #validates :price, numericality: { only_integer: true, greater_than: 299, less_than: 10000000 }
+  #validates :comment, presence: true, if: :user_id_present?
   
+  #private
+
+  #def user_id_present?
+    #user_id.present?
+  #end
   
 end

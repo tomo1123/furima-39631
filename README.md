@@ -48,12 +48,14 @@ has_many :orders
 | condition_id    | integer   | null: false                    |
 | category_id     | integer   | null: false                    |
 | delivery_fee_id | integer   | null: false                    |
-| prefecture_id   | integer   | null: false.                    | 
+| prefecture_id   | integer   | null: false.                   | 
 | price           | integer   | null: false, numericality: { only_integer: true, greater_than: 299, less_than: 10000000 }   |
+| comment         | text      | null: false, if: : user_id_present?| 
+| user_id.        | integer.  | null: false.                   |
 
 belongs_to :user
 has_one_attached :image
-has_many :comments, dependent: :destroy
+
 
 
 ## order テーブル
