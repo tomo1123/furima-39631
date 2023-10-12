@@ -9,7 +9,7 @@ class User < ApplicationRecord
 
   #validates :nickname, presence: true
   #validates :email, presence: true
-  #validates :password, presence: true
+  #validates :encrypted_password, presence: true
   #validates :password_confirmation, presence: true
   #validates :family_name, presence: true
   #validates :first_name, presence: true
