@@ -33,8 +33,7 @@ has_many :orders
 | user            | references| null: false                    |
 
 belongs_to :user
-has_one_attached :image
-has_many :orders
+has_one :order
 
 ## orders テーブル
 
@@ -45,13 +44,13 @@ has_many :orders
 
 belongs_to :user
 belongs_to :item
+has_one :address
 
 
 ## addresses
 
 | Column              | Type       | Options                        |
 | -------             | ---------- | ------------------------------ |
-| user                | references | null: false, foreign_key: true |
 | order               | references | null: false, foreign_key: true |
 | postal_code         | string     | null: false                    |
 | prefecture_id       | string     | null: false                    |
@@ -61,5 +60,4 @@ belongs_to :item
 | phone_number        | string     | null: false                    |
 
 
-belongs_to :user
 belongs_to :order
