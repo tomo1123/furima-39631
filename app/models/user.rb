@@ -7,7 +7,7 @@ class User < ApplicationRecord
   has_many :orders
 
   validates :email, presence: true, uniqueness: true 
-  validates :password, presence: true, length: { minimum: 6 }, format: { with: /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]+\z/i.freeze }
+  validates :email, format: { with: /\A[^@\s]+@[^@\s]+\z/, message: "は@を含む必要があります" }
   validates :encrypted_password, presence: true
   validates :password_confirmation, presence: true
   validates :last_name, presence: true
