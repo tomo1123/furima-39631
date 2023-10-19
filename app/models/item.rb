@@ -1,7 +1,7 @@
 class Item < ApplicationRecord
   belongs_to :user
   #has_one :order
-  #has_one_attached :image
+  has_one_attached :image
   
   validates :image, presence: true
   validates :title, presence: true 
@@ -14,7 +14,7 @@ class Item < ApplicationRecord
   validates :price, presence: true
   validates :price, numericality: { only_integer: true, greater_than: 299, less_than: 10000000 }
   validates :user_id, presence: true
-  
+
   
 
 end
