@@ -113,53 +113,8 @@
           </span>
         </div>
       </div>
-      <script>
-        document.addEventListener('DOMContentLoaded', function() {
-          const priceInput = document.getElementById('item-price');
-          const taxPriceOutput = document.getElementById('add-tax-price');
-          const profitOutput = document.getElementById('profit');
-
-          priceInput.addEventListener('input', function() {
-             const price = parseInt(priceInput.value, 10);
-
-             if (300 <= price && price <= 9999999) {
-               const taxPrice = Math.floor(price * 0.1);
-               const profit = price - taxPrice;
-
-               taxPriceOutput.textContent = taxPrice;
-               profitOutput.textContent = profit;
-             } else {
-               taxPriceOutput.textContent = '0';
-               profitOutput.textContent = '0';
-             }
-           });
-        });
-      </script>
-
     </div>
-     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-          const priceInput = document.getElementById('item-price');
-          const taxPriceOutput = document.getElementById('add-tax-price');
-          const profitOutput = document.getElementById('profit');
-
-          priceInput.addEventListener('input', function() {
-             const price = parseInt(priceInput.value, 10);
-
-             if (300 <= price && price <= 9999999) {
-               const taxPrice = Math.floor(price * 0.1);
-               const profit = price - taxPrice;
-
-               taxPriceOutput.textContent = taxPrice;
-               profitOutput.textContent = profit;
-             } else {
-               taxPriceOutput.textContent = '0';
-               profitOutput.textContent = '0';
-             }
-           });
-        });
-      </script>
-  
+    
     <%# 注意書き %>
     <div class="caution">
       <p class="sentence">
