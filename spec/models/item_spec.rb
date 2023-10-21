@@ -42,6 +42,62 @@ RSpec.describe Item, type: :model do
         @item.valid?
         expect(@item.errors.full_messages).to include("Price is not a number")
       end
+
+
+      it '商品画像がない場合は出品できない' do
+        @item.image = nil
+        @item.valid?
+        expect(@item.errors.full_messages).to include("Image can't be blank")
+      end
+
+      it '商品名がない場合は出品できない' do
+        @item.title = nil
+        @item.valid?
+        expect(@item.errors.full_messages).to include("Title can't be blank")
+      end
+
+      it '商品の説明がない場合は出品できない' do
+        @item.items_text = nil
+        @item.valid?
+        expect(@item.errors.full_messages).to include("Items text can't be blank")
+      end
+
+      it 'カテゴリーの情報がない場合は出品できない' do
+        @item.category_id = 0
+        @item.valid?
+        expect(@item.errors.full_messages).to include("Category can't be blank")
+      end
+
+      it '商品の状態についての情報がない場合は出品できない' do
+        @item.condition_id = 0
+        @item.valid?
+        expect(@item.errors.full_messages).to include("Condition can't be blank")
+      end
+
+      it '配送料の負担についての情報がない場合は出品できない' do
+        @item.delivery_fee_id = 0
+        @item.valid?
+        expect(@item.errors.full_messages).to include("Delivery fee can't be blank")
+      end
+
+      it '発送元の地域についての情報がない場合は出品できない' do
+        @item.prefecture_id = 0
+        @item.valid?
+        expect(@item.errors.full_messages).to include("Prefecture can't be blank")
+      end
+
+      it '発送までの日数についての情報がない場合は出品できない' do
+        @item.delivery_day_id = 0
+        @item.valid?
+        expect(@item.errors.full_messages).to include("Delivery day can't be blank")
+      end
+
+      it 'ユーザーが紐付いていないと商品は出品できない' do
+        @item.user = nil
+        @item.valid?
+        expect(@item.errors.full_messages).to include("User can't be blank") 
+      end
+      
     end
   end
 end
