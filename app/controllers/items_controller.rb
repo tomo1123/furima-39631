@@ -2,9 +2,9 @@ class ItemsController < ApplicationController
 
   before_action :authenticate_user!, only: [:new, :create]
 
-  #def index
-    #@items = Item.all
-  #end
+  def index
+    @items = Item.order("created_at DESC")
+  end
 
   def new
     @item = Item.new
@@ -19,10 +19,17 @@ class ItemsController < ApplicationController
     end
   end
 
-  #def show
-    #@item = Item.find(params[:id])
-    #@items = Item.all
-  #end
+  # def show
+  #   @item = Item.find(params[:id])
+  #   @items = Item.all
+  # end
+
+  # def destroy
+  #   item = Item.find(params[:id])
+  #   item.destroy
+  #   redirect_to root_path
+  # end
+  
 
 
   private
