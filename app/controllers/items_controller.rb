@@ -20,10 +20,10 @@ class ItemsController < ApplicationController
     end
   end
 
-  def show
-    @item = Item.find(params[:id])
-    @items = Item.all
-  end
+  # def show
+  #   @item = Item.find(params[:id])
+  #   @items = Item.all
+  # end
 
   def destroy
     item = Item.find(params[:id])
