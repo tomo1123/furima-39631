@@ -3,7 +3,6 @@ class ItemsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create]
 
   def index
-    @items = Item.all
     @items = Item.order("created_at DESC")
   end
 
@@ -25,11 +24,11 @@ class ItemsController < ApplicationController
   #   @items = Item.all
   # end
 
-  def destroy
-    item = Item.find(params[:id])
-    item.destroy
-    redirect_to root_path
-  end
+  # def destroy
+  #   item = Item.find(params[:id])
+  #   item.destroy
+  #   redirect_to root_path
+  # end
   
 
 
