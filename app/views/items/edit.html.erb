@@ -1,4 +1,4 @@
-<% if @item.user.id = current_user.id %>
+<% if @item.user_id = current_user.id %>
     <div class="items-sell-contents">
       <header class="items-sell-header">
         <div class="items-sell-header-inner">
@@ -160,5 +160,5 @@
       </footer>
     </div>
 <% else %>
-    <% link_to root_path %>
+    <% redirect_to root_path %>
 <% end %>

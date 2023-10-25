@@ -26,6 +26,10 @@ class ItemsController < ApplicationController
 
   def edit
     @item = Item.find(params[:id])
+    if @item_user.id.nil?
+      redirect_back_or_to root_path, alert: 'Item not found.'
+      return
+    end
     if @item.user_id != current_user.id
       redirect_to root_path
     end
