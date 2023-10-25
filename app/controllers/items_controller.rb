@@ -51,8 +51,7 @@ class ItemsController < ApplicationController
     else
       render :show, status: :unprocessable_entity
     end
-    
-
+  end
 
 
 
