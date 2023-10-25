@@ -1,8 +1,8 @@
 class ItemsController < ApplicationController
 
 
-  before_action :set_item, only: [:edit, :update, :show]
-  before_action :authenticate_user!, only: [:new, :create, :edit, :update]
+  before_action :set_item, only: [:edit, :update, :show, :destroy]
+  before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
   
 
   def index
@@ -23,7 +23,6 @@ class ItemsController < ApplicationController
   end
 
   def show
-    
     @items = Item.all
   end
 
@@ -46,6 +45,14 @@ class ItemsController < ApplicationController
     end
   end
 
+  def destroy
+    if @item.user_id == current_user.id
+      @item.destroy
+      redirect_to root_path
+    else
+      redirect_to item_path(@item), alert: 'You are not authorized to delete this item.'
+    end
+  end
 
 
   private
