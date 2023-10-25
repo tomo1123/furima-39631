@@ -46,13 +46,13 @@ class ItemsController < ApplicationController
   end
 
   def destroy
-    if @item.destroy
+    if @item.user_id == current_user.id
+      @item.destroy
       redirect_to root_path
     else
-      render :show, status: :unprocessable_entity
+      redirect_to item_path(@item), alert: 'You are not authorized to delete this item.'
     end
   end
-
 
 
   private
