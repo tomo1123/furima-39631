@@ -24,6 +24,7 @@ class ItemsController < ApplicationController
 
   def show
     @items = Item.all
+    gon.item_price = @item.price
   end
 
   def edit
