@@ -17,7 +17,7 @@ class OrdersController < ApplicationController
       @order_address.save
       return redirect_to root_path
     else
-      render :index, alert: '保存が失敗しました'
+      render :index, status: :unprocessable_entity
     end
   end
 
