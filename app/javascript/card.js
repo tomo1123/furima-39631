@@ -8,7 +8,7 @@ const pay = () => {
 
       const publicKey = gon.public_key;
       const itemPrice = gon.item_price;
-      const payjp = Payjp('pk_test_fd3698beeca22632c6b2739a');
+      const payjp = Payjp(publicKey);
       const elements = payjp.elements();
       const numberElement = elements.create('cardNumber');
       const expiryElement = elements.create('cardExpiry');

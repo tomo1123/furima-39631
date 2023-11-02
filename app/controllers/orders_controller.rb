@@ -8,7 +8,7 @@ class OrdersController < ApplicationController
       redirect_to root_path
     end
     @order_address = OrderAddress.new
-    gon.public_key = "pk_test_fd3698beeca22632c6b2739a"
+    gon.public_key = ENV["PAYJP_SECRET_KEY"]
   end
 
   def create
