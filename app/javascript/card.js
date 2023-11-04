@@ -4,9 +4,15 @@ const pay = () => {
   const waitForPayjp = setInterval(function() {
     if (typeof Payjp !== 'undefined') {
       clearInterval(waitForPayjp);
-      const publicKey = gon.public_key;
+      
+
+      const publicKey = gon.public_key
+      const payjp = Payjp(publicKey)
       const itemPrice = gon.item_price;
-      const payjp = Payjp(publicKey);
+
+    
+
+
       const elements = payjp.elements();
       const numberElement = elements.create('cardNumber');
       const expiryElement = elements.create('cardExpiry');
@@ -25,6 +31,7 @@ const pay = () => {
         isSubmitting = true;
         console.log(itemPrice);
         payjp.createToken(numberElement).then(function (response) {
+          console.log(response.id);
           if (response.error) {
             alert('カード情報が正しくありません。');
           } else {
