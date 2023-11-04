@@ -1,5 +1,4 @@
 const pay = () => {
-  console.log("OK");
   let isSubmitting = false;
   const waitForPayjp = setInterval(function() {
     if (typeof Payjp !== 'undefined') {
