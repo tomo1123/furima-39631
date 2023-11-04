@@ -30,6 +30,9 @@ class ItemsController < ApplicationController
 
   def edit
     @item_user = Item.find_by(id: params[:id])
+    if @item.order.present?
+      redirect_to root_path
+    end
     if @item_user.id.nil?
       redirect_back_or_to root_path, alert: 'Item not found.'
       return

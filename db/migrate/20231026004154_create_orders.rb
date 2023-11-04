@@ -6,6 +6,7 @@ class CreateOrders < ActiveRecord::Migration[7.0]
       t.string :token, null: false
       t.string :price, null: false
       t.timestamps
+      
     end
   end
 end
