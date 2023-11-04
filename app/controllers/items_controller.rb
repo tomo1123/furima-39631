@@ -11,6 +11,7 @@ class ItemsController < ApplicationController
 
   def new
     @item = Item.new
+
   end
 
   def create
@@ -18,16 +19,20 @@ class ItemsController < ApplicationController
     if @item.save
       redirect_to root_path
     else 
-      render :new, status: :unprocessable_entity
+      render :index, status: :unprocessable_entity
     end
   end
 
   def show
     @items = Item.all
+    gon.item_price = @item.price
   end
 
   def edit
     @item_user = Item.find_by(id: params[:id])
+    if @item.order.present?
+      redirect_to root_path
+    end
     if @item_user.id.nil?
       redirect_back_or_to root_path, alert: 'Item not found.'
       return
