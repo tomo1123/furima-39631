@@ -25,7 +25,6 @@ const pay = () => {
 
       form.addEventListener("submit", (e) => {
         if (isSubmitting) {
-          return;
         }
         isSubmitting = true;
         console.log(itemPrice);
