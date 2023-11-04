@@ -30,7 +30,7 @@ const pay = () => {
         }
         isSubmitting = true;
         payjp.createToken(numberElement).then(function (response) {
-          console.log(response.id);
+         
           if (response.error) {
             alert('カード情報が正しくありません。');
           } else {
