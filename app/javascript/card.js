@@ -24,10 +24,11 @@ const pay = () => {
       cvcElement.mount('#cvc-form');
 
       form.addEventListener("submit", (e) => {
+
         if (isSubmitting) {
+          return;
         }
         isSubmitting = true;
-        console.log(itemPrice);
         payjp.createToken(numberElement).then(function (response) {
           console.log(response.id);
           if (response.error) {
