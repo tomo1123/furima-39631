@@ -1,4 +1,4 @@
-window.addEventListener('turbo:load', () => {
+function calculateFees() {
   const priceInput = document.getElementById('item-price');
   if (priceInput) {
       priceInput.addEventListener("input", () => {
@@ -18,4 +18,6 @@ window.addEventListener('turbo:load', () => {
     );
   }
 }
-);
+
+document.addEventListener('turbo:load', calculateFees);
+document.addEventListener('turbo:render', calculateFees);
